@@ -1,0 +1,43 @@
+mat-card{
+    margin: 2% 2% 2% 2%;
+}
+mat-form-field{
+    margin: 1%;
+    width: 50%;
+}
+form{
+    text-align: center;
+}
+button{
+    width: 50%;
+}
+input[type="file"]{
+    visibility: hidden;
+}
+.button{
+    width: 50%;
+    margin: 10px;
+    height: 40px;
+}
+.image-preview{
+    height: 80px;
+    width: 100%;
+    border-radius: 3px;
+}
+.image-show{
+    height: 80px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.buttons-class {
+    height: 40px !important;
+    width: 100px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+    margin-bottom: 10px;
+  }
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+

@@ -1,0 +1,63 @@
+<div class="div">
+    <div class="header">
+        <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2">
+                <!-- <button class="signUpBtn" mat-raised-button color="warn">Sign Up</button> -->
+            </div>
+        </div>
+        <div class="home-banner">
+         <div class="banner-container">
+              <div class="banner-image"></div>
+            </div> 
+            <!-- <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+               <img src="img/logo.png" alt="Logo"> 
+            </a> -->
+        </div>
+        <div class="row" style="margin-top: 1%;">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <mat-card class="loginForm">
+                    <h2>ADMIN LOGIN</h2>
+                    <form [formGroup]="form">
+                        <mat-form-field>
+                             <mat-label>Email Id</mat-label> 
+                            <input matInput  formControlName="email">
+                      
+                        </mat-form-field><br><br>
+                        <mat-form-field>
+                            <mat-label>Password</mat-label> 
+                            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                            
+                         
+                          </mat-form-field>
+                        <br>
+                        
+                        
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <button type="submit" (click)="onSubmit()" mat-raised-button color="primary" class="login-button">
+                                    LogIn
+                                </button>
+                            </div>
+                            <div class="col-sm-4"></div>
+                            <!-- <div class="col-sm-5">
+                                <button type="button" mat-raised-button color="primary" class="login-button">
+                                    Sign Up
+                                </button>
+                            </div> -->
+                            <div class="col-sm-1"></div>
+                        </div>
+                    </form>
+                </mat-card>
+                
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
