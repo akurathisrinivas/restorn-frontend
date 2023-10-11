@@ -25,7 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { AdminModule } from './admin/admin.module';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 @NgModule({
@@ -42,6 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     
   ],
   imports: [
+    NgbModule,
+   
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -60,6 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LayoutModule,
     AdminModule,  
     MatMenuModule,
+    MatTabsModule,
    
   ],
   providers: [],

@@ -46,7 +46,7 @@ export class MenuService {
   }
 
   bookTable(formdata: any){
-    return this.httpClient.post(`${this.Url}/bookings/save`, formdata);
+    return this.httpClient.post(`${this.Url}/bookings/save`, formdata,{ headers: this.headers });
 
   }
 

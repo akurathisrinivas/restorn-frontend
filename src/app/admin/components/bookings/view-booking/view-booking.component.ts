@@ -15,16 +15,18 @@ export class ViewBookingComponent {
 
   Url = environment.root;
   id: any;
-  bookingData?: Bookings;
+  //bookingData?: Bookings;
+  bookingData!: Bookings;
+
   bookingResult ?: Bookings; 
 
-  name: any;
-  bookingId: String | undefined;
-  email?:string;
-  datetime?:string;
-  people?:string;
-  specialrequest?:any;
-  createdDate?:string;
+  // name: any;
+  // bookingId: String | undefined;
+  // email?:string;
+  // datetime?:string;
+  // people?:string;
+  // specialrequest?:any;
+  // createdDate?:string;
 
   pokemon = {};
 
@@ -46,13 +48,14 @@ export class ViewBookingComponent {
     this.bookingsService.getBookingById(this.id).subscribe(data => {
 
       this.bookingData = data as Bookings;
-      this.name= this.bookingData.name;
-      this.bookingId=this.bookingData.bookingId;
-      this.email=this.bookingData.email;
-      this.createdDate=this.bookingData.createdDate;
-      this.specialrequest=this.bookingData.specialrequest;
-      this.people=this.bookingData.people;
-      this.datetime=this.bookingData.datetime;
+      
+      // this.name= this.bookingData.name;
+      // this.bookingId=this.bookingData.bookingId;
+      // this.email=this.bookingData.email;
+      // this.createdDate=this.bookingData.createdDate;
+      // this.specialrequest=this.bookingData.specialrequest;
+      // this.people=this.bookingData.people;
+      // this.datetime=this.bookingData.datetime;
       // this.bookingResult = {
           
       //    id: this.bookingData.id,

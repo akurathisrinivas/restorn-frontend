@@ -119,12 +119,38 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Success</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<b style="color:green">Table Booked Successfully</b>
+				
+			</div>
+		</form>
+	</div>
+	<!-- <div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+	</div> -->
+</ng-template>
+
+<button id="auto_trigger" type="hidden" class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr />
+
+<!-- <pre>{{ closeResult }}</pre> -->
+
 <!-- About End -->
 
-<!-- <mat-tab-group (selectedTabChange)="tabClick()"></mat-tab-group>
+ <!-- <mat-tab-group (selectedTabChange)="tabClick()">
     <mat-tab label="Tab 1">Content 1</mat-tab>
 	<mat-tab label="Tab 2">Content 2</mat-tab>
-</mat-tab-group> -->
+</mat-tab-group>  -->
 
 <!-- Menu Start -->
 <div class="container-xxl py-5">
@@ -133,7 +159,8 @@
             <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
             <h1 class="mb-5">Most Popular Items</h1>
         </div>
-        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+
+        <!-- <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
             <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
                 <li class="nav-item">
                     <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
@@ -465,7 +492,345 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs nav nav-pills d-inline-flex justify-content-center border-bottom mb-5"> 
+            
+                <li [ngbNavItem]="1">
+                    <a ngbNavLink class="d-flex align-items-center text-start mx-3 ms-0 pb-3 "  >
+                        <i class="fa fa-coffee fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Popular</small>
+                            <h6 class="mt-n1 mb-0">Breakfast</h6>
+                        </div>
+                    </a>
+                    <ng-template ngbNavContent>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </ng-template>
+                </li>
+
+                 <li [ngbNavItem]="2">
+                    <a ngbNavLink class="d-flex align-items-center text-start mx-3 pb-3" >
+                        <i class="fa fa-hamburger fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Special</small>
+                            <h6 class="mt-n1 mb-0">Launch</h6>
+                        </div>
+                    </a>
+                    <ng-template ngbNavContent>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Special Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li>
+                 <li  [ngbNavItem]="3">
+                    <a ngbNavLink class="d-flex align-items-center text-start mx-3 me-0 pb-3" >
+                        <i class="fa fa-utensils fa-2x text-primary"></i>
+                        <div class="ps-3">
+                            <small class="text-body">Lovely</small>
+                            <h6 class="mt-n1 mb-0">Dinner</h6>
+                        </div>
+                    </a>
+                    <ng-template ngbNavContent>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-1.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-2.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-3.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-4.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-5.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-6.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-7.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid rounded" src="/../../assets/img/menu-8.jpg" alt="" style="width: 80px;">
+                                    <div class="w-100 d-flex flex-column text-start ps-4">
+                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                            <span>Chicken Burger</span>
+                                            <span class="text-primary">$115</span>
+                                        </h5>
+                                        <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo diam</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </li> 
+            </ul>
+
+              
+            <div [ngbNavOutlet]="nav"></div>
         </div>
+
     </div>
 </div>
 <!-- Menu End -->
@@ -499,11 +864,25 @@
                                 <label for="email">Your Email</label>
                             </div>
                         </div>
+
+                        <!-- <div class="form-group">
+                            <div class="input-group">
+                              <input class="form-control" placeholder="yyyy-mm-dd"
+                                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                              </div>
+                            </div>
+                          </div> -->
+
                         <div class="col-md-6">
                             <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" name="datetime" formControlName= "datetime" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                <input type="text" (click)="d.toggle()" class="form-control datetimepicker-input" name="datetime" formControlName= "datetime" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" ngbDatepicker #d="ngbDatepicker" />
                                 <label for="datetime">Date & Time</label>
                             </div>
+                            <!-- <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                              </div> -->
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -515,6 +894,21 @@
                                 <label for="select1">No Of People</label>
                               </div>
                         </div>
+
+                        <!-- <div class="col-md-12">
+                            <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+  
+                            <ngb-timepicker [(ngModel)]="time2" [meridian]="meridian"></ngb-timepicker>
+                            <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+                                Meridian - {{meridian ? "ON" : "OFF"}}
+                            </button>
+                              
+                            <hr/>
+                            <pre>Selected time: {{time | json}}</pre>
+                            <pre>Selected time: {{time2 | json}}</pre>
+                        </div> -->
+                        
+
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea class="form-control" name="specialrequest" formControlName="specialrequest" placeholder="Special Request" id="message" style="height: 100px"></textarea>
