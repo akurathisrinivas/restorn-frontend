@@ -8,6 +8,9 @@ import { AddMenuComponent } from './components/menu/add-menu/add-menu.component'
 import { MenuComponent } from './components/menu/menu.component';
 import { UploadMenuinagesComponent } from './components/menu/upload-menuinages/upload-menuinages.component';
 import { ViewMenuimagesComponent } from './components/menu/view-menuimages/view-menuimages.component';
+import { AddServiceComponent } from './components/services/add-service/add-service.component';
+import { ServicesComponent } from './components/services/services.component';
+import { UploadServiceimageComponent } from './components/services/upload-serviceimage/upload-serviceimage.component';
 
 
 
@@ -25,6 +28,11 @@ const routes: Routes = [
 
         { path: 'bookings', component: BookingsComponent },
         { path: 'viewBooking/:id/view', component: ViewBookingComponent },
+
+        { path: 'services', component: ServicesComponent },
+        { path: 'newservice', component: AddServiceComponent },
+        { path: 'services/add-serviceimage/:id/upload', component: UploadServiceimageComponent },
+
       ]
 
     }

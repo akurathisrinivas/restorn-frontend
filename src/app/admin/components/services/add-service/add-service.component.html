@@ -1,0 +1,110 @@
+<mat-card>
+    <h1><b> {{ formName }} Services </b></h1>
+    <hr>
+    <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">  
+        {{message}}  
+      </p>
+    <form [formGroup]="serviceForm">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                
+                    <mat-form-field appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput type="text" id="title" formControlName="title" placeholder="Title" value="">
+                    </mat-form-field>
+               
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Icon class</mat-label>
+                        <input matInput type="text" formControlName="icon_class" placeholder="Icon class">
+                    </mat-form-field>
+                </div>
+               </div>
+
+            <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Shot Desc</mat-label>
+                 <input matInput type="text" formControlName="short_description" placeholder="Shot Desc"> 
+                
+                    
+                </mat-form-field>
+            </div>
+           </div>
+           <label for="description">Long Description</label>
+    <!-- <ckeditor
+      #editor
+      
+      id="description"
+      name="description"
+      >
+    </ckeditor> -->
+
+
+
+           <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Long Desc</mat-label>
+                    <textarea matInput type="text" formControlName="long_description"
+                    
+                    rows="5" cols="40"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+           </div>
+
+           
+
+           
+
+           
+
+           <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Status</mat-label>
+                    <mat-select matNativeControl required formControlName="status">
+                        <mat-option value="ACTIVE">ACTIVE</mat-option>
+                        <mat-option value="INACTIVE">INACTIVE</mat-option>
+                
+                      </mat-select>                    
+                </mat-form-field>
+            </div>
+           </div>
+
+        
+        <div class="row">
+            
+            <div class="col-sm-1">
+                
+                <!-- <button class="buttons-class" mat-raised-button type="button" color="warn" [routerLink]="['/admin/menus']" routerLinkActive="router-link-active" >Cancel</button> -->
+            
+                <button class="buttons-class" mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+            
+            </div>
+           
+        </div>
+
+        <!--<mat-card class="mat-elevation-z0">
+            <mat-card-footer>
+                
+                <button  mat-raised-button type="button" color="warn" [routerLink]="['/admin/menus']" routerLinkActive="router-link-active" >Cancel</button>
+            
+                <button  mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+            </mat-card-footer>
+                </mat-card>-->
+
+        
+    </form>
+</mat-card>
+

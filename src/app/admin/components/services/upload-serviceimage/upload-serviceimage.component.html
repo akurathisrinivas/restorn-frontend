@@ -1,0 +1,44 @@
+
+<mat-card>
+    <h1><b> Upload Service Image</b></h1>
+<form [formGroup]="serviceImageForm">
+
+    <div class="col-sm-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <!-- <button type="button" class="button image-upload-button" mat-raised-button
+                    (click)="filePicker.click()">
+                    <mat-icon>image</mat-icon> Choose file
+                </button> -->
+                <input type="file" class="button image-upload-button" #filePicker (change)="onFileSelected($event)">
+            </div>
+            <input type="hidden" name="service_id" value="{{ service_id }}"/>
+            <!-- <div class="col-sm-3" *ngIf="showImage">
+                <div class="image-show">
+                    <img [src]="Url+ '/upload/'+ imagePath" class="image-show">
+                </div>
+            </div>-->
+            <div class="col-sm-3">
+                <div *ngIf="imagePreview !== '' && imagePreview">
+                    <img [src]="imagePreview" class="image-preview" style="width:150px;height:150 px">
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-1">
+            <button mat-raised-button type="button" color="warn" [routerLink]="['/admin/services']" routerLinkActive="router-link-active" >Cancel</button>
+        </div>
+        <div class="col-sm-1">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    
+
+
+</form>
+
+</mat-card>

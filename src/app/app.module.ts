@@ -27,7 +27,8 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { CKEditorModule } from 'ckeditor4-angular';
+//import { CKEditorModule } from '@ckeditor/ckeditor5-angular'; 
 
 @NgModule({
   declarations: [
@@ -38,13 +39,14 @@ import { MatTabsModule } from '@angular/material/tabs';
     AboutComponent,
     ServiceComponent,
     MenuComponent,
-    ContactComponent
+    ContactComponent,
+    
     
     
   ],
   imports: [
     NgbModule,
-   
+    CKEditorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

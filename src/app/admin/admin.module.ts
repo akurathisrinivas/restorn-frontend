@@ -15,7 +15,11 @@ import { BookingsComponent } from './components/bookings/bookings.component';
 import { ViewBookingComponent } from './components/bookings/view-booking/view-booking.component';
 import { ViewMenuimagesComponent } from './components/menu/view-menuimages/view-menuimages.component';
 import { UploadMenuinagesComponent } from './components/menu/upload-menuinages/upload-menuinages.component';
+import { ServicesComponent } from './components/services/services.component';
+import { AddServiceComponent } from './components/services/add-service/add-service.component';
 
+import { CKEditorModule } from 'ckeditor4-angular';
+import { UploadServiceimageComponent } from './components/services/upload-serviceimage/upload-serviceimage.component';
 
 
 @NgModule({
@@ -28,7 +32,10 @@ import { UploadMenuinagesComponent } from './components/menu/upload-menuinages/u
     BookingsComponent,
     ViewBookingComponent,
     ViewMenuimagesComponent,
-    UploadMenuinagesComponent
+    UploadMenuinagesComponent,
+    ServicesComponent,
+    AddServiceComponent,
+    UploadServiceimageComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +44,7 @@ import { UploadMenuinagesComponent } from './components/menu/upload-menuinages/u
     MaterialModule,
     MatSidenavModule,
     MatBadgeModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: []
