@@ -71,10 +71,10 @@
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
           <td mat-cell *matCellDef="let services" class="action-link">
-            <!--<mat-icon class="view" color="primary" matTooltip="View" (click)="updateBooking(menu.id)">
+           <mat-icon class="view" color="primary" matTooltip="View" (click)="updateService(services.id)">
               mode
             </mat-icon>
-            <mat-icon class="view" color="warn" matTooltip="Delete" (click)="deleteBooking(menu.id)">
+             <!--<mat-icon class="view" color="warn" matTooltip="Delete" (click)="deleteBooking(menu.id)">
               delete</mat-icon> -->
             <!-- <button mat-raised-button class="newButton" color="primary" [routerLink]="['/admin/view']"
             routerLinkActive="router-link-active">

@@ -32,6 +32,7 @@ const routes: Routes = [
         { path: 'services', component: ServicesComponent },
         { path: 'newservice', component: AddServiceComponent },
         { path: 'services/add-serviceimage/:id/upload', component: UploadServiceimageComponent },
+        { path: 'services/:id/edit', component: AddServiceComponent },
 
       ]
 

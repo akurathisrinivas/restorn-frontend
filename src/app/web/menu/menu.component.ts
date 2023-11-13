@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  model :any;
+  active = 1;
+  closeResult: any;
+
 }

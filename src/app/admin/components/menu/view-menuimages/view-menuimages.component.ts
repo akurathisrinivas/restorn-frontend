@@ -31,7 +31,9 @@ export class ViewMenuimagesComponent {
    }
 
    ngOnInit(): void {
-
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     this.id = this.route.snapshot.paramMap.get('id');
     this.menuService.getMenuById(this.id).subscribe(data => {
       this.menuData = data as Menu;

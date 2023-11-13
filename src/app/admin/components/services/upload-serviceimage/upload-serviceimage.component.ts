@@ -41,7 +41,9 @@ export class UploadServiceimageComponent {
 
 
    ngOnInit(): void {
-
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     
     this.service_id = this.route.snapshot.paramMap.get('id');
 

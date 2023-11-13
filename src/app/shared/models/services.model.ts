@@ -7,5 +7,6 @@ export interface Services{
     iconurl?:string;
     status?:any;
     lastId?:any;
+    icon_class?:any;
     created_date?:string;
 }

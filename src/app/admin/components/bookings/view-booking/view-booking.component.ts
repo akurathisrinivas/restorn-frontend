@@ -42,6 +42,9 @@ export class ViewBookingComponent {
    }
 
    ngOnInit(): void {
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     this.id = this.route.snapshot.paramMap.get('id');
     //this.bookingResult = this.initGetData();
     //alert(this.bookingResult.name);

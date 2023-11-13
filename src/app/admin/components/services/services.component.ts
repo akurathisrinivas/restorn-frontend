@@ -48,6 +48,9 @@ export class ServicesComponent {
 
   }
   ngOnInit(): void {
+    if (sessionStorage.length == 0) {
+       this.router.navigate([`/login`]);
+     }
     this.getServices();
   }
 
@@ -86,5 +89,10 @@ async changeStatus(id: string, status: any) {
 viewService(id: String){
 
 }
+
+updateService(id: string) {
+  this.router.navigate([`admin/services/${id}/edit`]);
+}
+
 
 }

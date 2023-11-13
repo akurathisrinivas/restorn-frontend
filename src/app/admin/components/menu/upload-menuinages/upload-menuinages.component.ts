@@ -39,7 +39,9 @@ export class UploadMenuinagesComponent {
 
    ngOnInit(): void {
 
-    
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     this.menu_id = this.route.snapshot.paramMap.get('id');
 
 

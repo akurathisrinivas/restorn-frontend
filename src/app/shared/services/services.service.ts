@@ -30,4 +30,8 @@ export class ServicesService {
   return this.httpClient.post(`${this.Url}/services/uploadserviceimage`, files);
 }
 
+updateService(id: string, service:any){
+  return this.httpClient.patch(`${this.Url}/services/updateServicePartially/${id}`, service);
+}
+
 }

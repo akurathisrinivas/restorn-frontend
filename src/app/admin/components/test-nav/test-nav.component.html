@@ -96,7 +96,7 @@
         <button class="admenu" mat-button [matMenuTriggerFor]="menu"> Admin <mat-icon>more_vert</mat-icon></button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>Change Password</button>
-          <button mat-menu-item>Logout</button>
+          <button (click)="logout()" mat-menu-item>Logout</button>
         </mat-menu>
   
       </mat-card>

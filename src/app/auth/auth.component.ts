@@ -12,7 +12,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AuthComponent {
   
-  email!: string;
+  username!: string;
   role!: string;
   status!: string;
   message!: string;
@@ -35,7 +35,7 @@ export class AuthComponent {
 
   initForm() {
     this.form = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
@@ -49,16 +49,25 @@ export class AuthComponent {
     this.authService.login(this.form.value).subscribe((data) => {
       this.data = data;
       this.role = this.data.roles;
-      this.email = this.data.email;
+      //this.username = this.data.email;
+      this.jwtService.setToken(this.data.jwtToken);
       window.sessionStorage.setItem('id', this.data.id);
-      window.sessionStorage.setItem('username', this.data.username);
+      window.sessionStorage.setItem('username', this.data.name);
       window.sessionStorage.setItem('email', this.data.email);
-      //window.sessionStorage.setItem('email', this.data.email);
+      window.sessionStorage.setItem('roles', this.data.roles);
+      //window.sessionStorage.setItem('roles', this.data.roles);
       console.log('shows erorr msg',this.message);
-      if(this.status != '500'){
+      if(this.data.id != 0 ){
         this.router.navigate(['admin']);
+       }else{
+        //(err: any) => this.errorHandler(err, 'Invalid Credentials!')
+        this.snackbar.open('Invalid Credentials!', 'Ok', {
+           duration: 2000,
+         });
        }
-      (err: any) => this.errorHandler(err, 'Invalid Credentials!')
+
+
+      
     }
     
     );

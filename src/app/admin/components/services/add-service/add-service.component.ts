@@ -40,7 +40,9 @@ export class AddServiceComponent {
 
 
    ngOnInit(): void {
-
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     this.serviceForm = this.formBuilder.group({  
       title: ['', [Validators.required]],  
       short_description: ['', [Validators.required]],  
@@ -68,9 +70,11 @@ export class AddServiceComponent {
         this.servicesData = data as Services;
         //console.log(this.menuData);
         //alert(this.menuData.title);
-        
-      
-      
+        this.serviceForm.controls['title'].setValue(this.servicesData.title);
+        this.serviceForm.controls['short_description'].setValue(this.servicesData.short_description);
+        this.serviceForm.controls['long_description'].setValue(this.servicesData.long_description);
+        this.serviceForm.controls['icon_class'].setValue(this.servicesData.icon_class);
+        //this.serviceForm.controls['status'].setValue(this.servicesData.status);
       });
       
       }
@@ -80,8 +84,19 @@ export class AddServiceComponent {
     onSubmit() {
 
       if (this.id) {
-       // this.servicesService.updateMenu(this.id, this.menuForm.value).subscribe(data => {
-       // })
+        console.log(this.serviceForm.value);
+        let formdata=this.serviceForm.value;
+        //let result = formdata.filter(({ name }) => !array.includes(name));
+        delete formdata['status'];
+        this.servicesService.updateService(this.id, formdata).subscribe(data => {
+
+          this.snackbar.open('Data added Successfully', 'Ok', {
+             duration: 3000,
+           });
+
+           this.router.navigate([`/admin/services`]);
+
+        })
       }
       else {
         this.servicesService.addService(this.serviceForm.value).subscribe(data => {

@@ -49,6 +49,9 @@ export class BookingsComponent {
     };
 
     ngOnInit(): void {
+      if (sessionStorage.length == 0) {
+        this.router.navigate([`/login`]);
+      }
       this.getBookings();
     }
 

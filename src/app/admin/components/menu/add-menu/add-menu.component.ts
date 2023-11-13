@@ -46,7 +46,9 @@ export class AddMenuComponent {
    }
 
    ngOnInit(): void {
-
+    if (sessionStorage.length == 0) {
+      this.router.navigate([`/login`]);
+    }
     this.menuForm = this.formBuilder.group({  
       title: ['', [Validators.required]],  
       shot_desc: ['', [Validators.required]],  

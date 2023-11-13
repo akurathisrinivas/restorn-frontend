@@ -29,4 +29,15 @@ export class TestNavComponent {
     this.lastLogin = window.sessionStorage.getItem('email');
     //this.image = window.sessionStorage.getItem('image');
   }
+
+  logout(){
+    //alert(sessionStorage.length);
+    //alert("going to logout...");
+    //if (sessionStorage.length == 0) 
+                
+
+    sessionStorage.clear(); 
+    this.router.navigate([`/login`]);
+
+  }
 }
