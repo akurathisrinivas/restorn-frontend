@@ -16,3 +16,9 @@ export interface MenuImages {
    menuId?: any;
    link?: any;
 }
+
+export interface HomePageMenu {
+    popularMenuList? : any;
+    speacialMenuList? : any;
+    lovelyMenuList? : any;
+}

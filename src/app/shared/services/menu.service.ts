@@ -21,6 +21,10 @@ export class MenuService {
     return this.httpClient.get(`${this.Url}/menu/getAllMenu`);
      }
 
+     getHomePageMenu(){
+      return this.httpClient.get(`${this.Url}/menu/homePageMenu`);
+       }
+
      getMenuById(id: string) {
       return this.httpClient.get(`${this.Url}/menu/getMenuById/${id}`);
     }
